@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet,
   Text,
   View,
   ScrollView,
@@ -29,7 +28,7 @@ export default class Home extends Component {
   render() {
     return (
       <ScrollView
-        style={{backgroundColor: 'teal'}}
+        style={{backgroundColor: '#757575'}}
         onScroll={(e)=>{
           if(this.endReached(e.nativeEvent)&&(this.state.last_loaded<(data.articles.length))) {
             if(Platform.OS==='android') {
@@ -50,12 +49,3 @@ export default class Home extends Component {
   }
 
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  }
-});
