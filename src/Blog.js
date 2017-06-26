@@ -12,6 +12,8 @@ import {
 } from 'react-native';
 import CommentsBox from './CommentsBox';
 import whole_data from './data';
+import {Touchable} from './helpers';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default class Blog extends Component {
 
@@ -69,6 +71,11 @@ export default class Blog extends Component {
             style={{height: this.state.calc_height}}
             onLayout={(e)=>{this.setState({calc_height: e.nativeEvent.layout.width*9/16})}}
           />
+          {Platform.OS==='ios' &&
+            <Touchable onPress={()=>{this.props.showHome()}}>
+              <Icon name="arrow-back" size={30}/>
+            </Touchable>
+          }
           <Text style={styles.articleTitle}>
             {this.state.data.title}
           </Text>
